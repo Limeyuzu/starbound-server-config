@@ -1,7 +1,7 @@
 # Starbound linux dedicated server install with mods script
 
 ## How to use
-1. Go to [releases](https://github.com/Limeyuzu/starbound-server-config/releases), find the latest tag and download `scripts.tgz` from your server from the home directory `~`. Extract the contents.
+1. Go to [releases](https://github.com/Limeyuzu/starbound-server-config/releases), find the latest tag and download `scripts.tgz` from your server. Extract the contents.
     * e.g. for v1.0.0:
         ```
         cd ~

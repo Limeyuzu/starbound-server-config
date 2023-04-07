@@ -29,5 +29,5 @@ if [ ! -z "$(ls -A)" ]; then
 fi
 
 # Start server
-cd ~/.local/share/Steam/steamcmd/starbound/linux/
+cd ~/.local/share/Steam/steamcmd/starbound/linux
 ./startbound_server
