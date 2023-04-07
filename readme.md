@@ -12,10 +12,6 @@
         ```
 2. Run install-steam.sh if Steam is not installed (sudo required). There should be a Steam directory under home ~
 
-3. Create the directory `/home/steam/steamcmd/starbound/mods/` and set this to be the folder to read all mod content from
+3. Edit mods.sh and add the workshop IDs that you want. Leave empty for no mods
 
-4. Edit mods.sh and add the workshopIds that you want. Leave empty for no mods
-
-5. Switch to the user used to install steamcmd (e.g. `su steam`)
-
-6. Run `start-server.sh USER` where USER is your Steam username. You will be prompted for a password/MFA. This is required because Starbound does not allow anonymous downloads from Steam.
+4. Run `./start-server.sh STEAM_USERNAME` where STEAM_USERNAME is your Steam username. You will be prompted for a password/MFA. This is required because Starbound does not allow anonymous downloads from Steam.
