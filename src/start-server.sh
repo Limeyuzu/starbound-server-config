@@ -18,14 +18,16 @@ done
 rm -r ~/.local/share/Steam/steamcmd/starbound/mods/*
 rm -r ~/.local/share/Steam/steamcmd/starbound/steamapps/workshop/content/211820/*
 
-steamcmd +force_install_dir ./starbound +login $1 +app_update 211820 $workshopDownloadList validate +quit
+steamcmd +login $1 +app_update 211820 $workshopDownloadList validate +quit
 
 # Rename all contents.pak to {workshopId}.pak and move to mod folder
-pushd ~/.local/share/Steam/steamcmd/starbound/steamapps/workshop/content/211820
+cd ~/.local/share/Steam/steamcmd/starbound/steamapps/workshop/content/211820
 if [ ! -z "$(ls -A)" ]; then
     for modDirectory in * ; do
         cp ${modDirectory}/contents.pak ~/.local/share/Steam/steamcmd/starbound/mods/${modDirectory}.pak
     done
 fi
 
-popd
+# Start server
+cd ~/.local/share/Steam/steamcmd/starbound/linux/
+./startbound_server
