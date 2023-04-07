@@ -15,19 +15,20 @@ do
 done
 
 # Remove existing mods
-rm -r /home/steam/Steam/steamcmd/starbound/mods/*
-rm -r /home/steam/Steam/steamcmd/starbound/steamapps/workshop/content/211820/*
+rm -rf /home/steam/steamcmd/starbound/mods/*
+rm -rf /home/steam/Steam/steamapps/workshop/content/211820/*
 
 steamcmd +login $1 +app_update 211820 $workshopDownloadList validate +quit
 
 # Rename all contents.pak to {workshopId}.pak and move to mod folder
-cd /home/steam/Steam/steamcmd/starbound/steamapps/workshop/content/211820
+cd /home/steam/Steam/steamapps/workshop/content/211820
 if [ ! -z "$(ls -A)" ]; then
+    mkdir -p /home/steam/steamcmd/starbound/mods
     for modDirectory in * ; do
-        cp ${modDirectory}/contents.pak /home/steam/Steam/steamcmd/starbound/mods/${modDirectory}.pak
+        cp ${modDirectory}/contents.pak /home/steam/steamcmd/starbound/mods/${modDirectory}.pak
     done
 fi
 
 # Start server
-cd /home/steam/Steam/steamcmd/starbound/linux
+cd /home/steam/steamcmd/starbound/linux
 ./starbound_server
