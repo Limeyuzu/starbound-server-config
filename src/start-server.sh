@@ -30,4 +30,4 @@ fi
 
 # Start server
 cd ~/.local/share/Steam/steamcmd/starbound/linux
-./startbound_server
+./starbound_server
